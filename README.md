@@ -1,3 +1,6 @@
+# jhipster-spatial-example
+A Jhipster Monolithic Application with DB Spatial functions
+
 # jhipsterSpatialExample
 This application was generated using JHipster 4.4.1, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.4.1](https://jhipster.github.io/documentation-archive/v4.4.1).
 

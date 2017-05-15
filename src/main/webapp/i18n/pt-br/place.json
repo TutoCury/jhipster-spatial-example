@@ -1,0 +1,23 @@
+{
+    "jhipsterSpatialExampleApp": {
+        "place" : {
+            "home": {
+                "title": "Places",
+                "createLabel": "Criar novo Place",
+                "createOrEditLabel": "Criar ou editar Place",
+                "search": "Pesquisar por Place"
+            },
+            "created": "Um novo Place é criado com o identificador {{ param }}",
+            "updated": "Um Place é atualizado com o identificador {{ param }}",
+            "deleted": "Um Place é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Place {{ id }}?"
+            },
+            "detail": {
+                "title": "Place"
+            },
+            "name": "Name",
+            "area": "Area"
+        }
+    }
+}

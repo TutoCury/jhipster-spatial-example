@@ -1,0 +1,10 @@
+package com.tuto.spatial.repository.search;
+
+import com.tuto.spatial.domain.Place;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+/**
+ * Spring Data Elasticsearch repository for the Place entity.
+ */
+public interface PlaceSearchRepository extends ElasticsearchRepository<Place, Long> {
+}

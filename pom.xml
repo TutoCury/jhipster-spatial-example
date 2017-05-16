@@ -376,6 +376,33 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-data</artifactId>
         </dependency>
+        
+        <!--Dependências adicionais-->
+        <dependency>             
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-spatial</artifactId>
+            <version>${hibernate.version}</version>
+            <!--<version>5.2.10.Final</version>-->
+        </dependency>
+        <dependency>             
+            <groupId>org.opengeo</groupId>
+            <artifactId>geodb</artifactId>
+            <version>0.8</version>
+            <!--<scope>test</scope>-->
+        </dependency>        
+        <!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
+        <dependency>
+            <groupId>com.vividsolutions</groupId>
+            <artifactId>jts</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.bedatadriven/jackson-datatype-jts -->
+        <dependency>
+            <groupId>com.bedatadriven</groupId>
+            <artifactId>jackson-datatype-jts</artifactId>
+            <version>2.4</version>
+        </dependency>
+        
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
     <build>
@@ -632,6 +659,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    
+    <!--Adicionando repositório necessário para o geodb-->
+    <repositories>
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>https://repo.boundlessgeo.com/main/</url>
+        </repository>    
+    </repositories>
+    
     <profiles>
         <profile>
             <id>no-liquibase</id>

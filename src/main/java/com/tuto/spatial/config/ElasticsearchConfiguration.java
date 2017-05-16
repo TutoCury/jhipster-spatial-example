@@ -1,5 +1,6 @@
 package com.tuto.spatial.config;
 
+import com.bedatadriven.jackson.datatype.jts.JtsModule;
 import java.io.IOException;
 
 import org.elasticsearch.client.Client;
@@ -26,6 +27,7 @@ public class ElasticsearchConfiguration {
 
         public CustomEntityMapper(ObjectMapper objectMapper) {
             this.objectMapper = objectMapper;
+            this.objectMapper.registerModule(new JtsModule());
             objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
             objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
         }

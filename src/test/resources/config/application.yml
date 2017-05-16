@@ -29,7 +29,7 @@ spring:
         type: none
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:jhipsterSpatialExample;DB_CLOSE_DELAY=-1
+        url: jdbc:h2:mem:jhipsterSpatialExample;DB_CLOSE_DELAY=-1;INIT=RUNSCRIPT FROM './src/test/resources/config/h2-geo-functions.sql'
         name:
         username:
         password:
@@ -49,6 +49,9 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
             hibernate.hbm2ddl.auto: validate
+            #configurações para funcionamento de geo no h2
+            hibernate.format_sql: true
+            hibernate.dialect: org.hibernate.spatial.dialect.h2geodb.GeoDBDialect         
     data:
         elasticsearch:
             cluster-name:

@@ -9,6 +9,10 @@ import com.tuto.spatial.repository.search.PlaceSearchRepository;
 import com.tuto.spatial.service.dto.PlaceDTO;
 import com.tuto.spatial.service.mapper.PlaceMapper;
 import com.tuto.spatial.web.rest.errors.ExceptionTranslator;
+import com.vividsolutions.jts.geom.Coordinate;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Polygon;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -44,8 +48,10 @@ public class PlaceResourceIntTest {
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_AREA = "AAAAAAAAAA";
-    private static final String UPDATED_AREA = "BBBBBBBBBB";
+    private static final GeometryFactory GEOMETRY_FACTORY = new GeometryFactory();
+    
+    private static final Geometry DEFAULT_AREA = GEOMETRY_FACTORY.createPolygon(new Coordinate[4]);
+    private static final Geometry UPDATED_AREA = GEOMETRY_FACTORY.createPolygon(new Coordinate[4]);
 
     @Autowired
     private PlaceRepository placeRepository;

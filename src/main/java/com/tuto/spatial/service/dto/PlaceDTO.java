@@ -1,6 +1,7 @@
 package com.tuto.spatial.service.dto;
 
 
+import com.tuto.spatial.service.dto.custom.Area;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -15,7 +16,7 @@ public class PlaceDTO implements Serializable {
     @NotNull
     private String name;
 
-    private String area;
+    private Area area;
 
     public Long getId() {
         return id;
@@ -33,11 +34,11 @@ public class PlaceDTO implements Serializable {
         this.name = name;
     }
 
-    public String getArea() {
+    public Area getArea() {
         return area;
     }
 
-    public void setArea(String area) {
+    public void setArea(Area area) {
         this.area = area;
     }
 

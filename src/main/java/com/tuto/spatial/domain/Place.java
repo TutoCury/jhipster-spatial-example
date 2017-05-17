@@ -1,5 +1,6 @@
 package com.tuto.spatial.domain;
 
+import com.vividsolutions.jts.geom.Geometry;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -29,7 +30,7 @@ public class Place implements Serializable {
     private String name;
 
     @Column(name = "area")
-    private String area;
+    private Geometry area;
 
     public Long getId() {
         return id;
@@ -52,16 +53,16 @@ public class Place implements Serializable {
         this.name = name;
     }
 
-    public String getArea() {
+    public Geometry getArea() {
         return area;
     }
 
-    public Place area(String area) {
+    public Place area(Geometry area) {
         this.area = area;
         return this;
     }
 
-    public void setArea(String area) {
+    public void setArea(Geometry area) {
         this.area = area;
     }
 
